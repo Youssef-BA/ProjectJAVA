@@ -10,10 +10,9 @@
         Route Management: Adding, modifying, and deleting information about routes, including schedules and fares.
         Discount Card Management: Managing information about eligible discount cards and their beneficiaries to facilitate future transactions.
         Reports: Generating reports to track sales, bookings, and other ticket office activities.
-      
       -> For a traveler:
         Ticket Sales: Ticket sale process based on criteria specified by the traveler, including class (1st, 2nd) of seat and destination.
-        Print Ticket Technologies Used:
+        Print Ticket Technologies Used.
         
 Programming Language: Java for business logic and backend.
 User Interface: Swing for GUI development.
