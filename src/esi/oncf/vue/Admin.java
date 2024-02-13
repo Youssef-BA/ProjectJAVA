@@ -47,10 +47,8 @@ public class Admin extends javax.swing.JFrame {
         Date = new javax.swing.JTextField();
         Logo = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
-        JNbrePlace = new javax.swing.JLabel();
-        NbrePlace = new javax.swing.JTextField();
-        JIdPlace = new javax.swing.JLabel();
-        IdPlace = new javax.swing.JTextField();
+        JNbreTrain = new javax.swing.JLabel();
+        NbreTrain = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,28 +118,18 @@ public class Admin extends javax.swing.JFrame {
         Logo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ma/ac/esi/image/oncf.png"))); // NOI18N
 
-        Title.setFont(new java.awt.Font("MS Gothic", 0, 36)); // NOI18N
+        Title.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 36)); // NOI18N
+        Title.setForeground(new java.awt.Color(255, 255, 255));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Title.setText("ADD TRAIN");
-        Title.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Title.setText("Ajouter un Voyage");
         Title.setMaximumSize(new java.awt.Dimension(200, 100));
         Title.setMinimumSize(new java.awt.Dimension(100, 50));
 
-        JNbrePlace.setText("Nombre de place");
+        JNbreTrain.setText("Numero de Train");
 
-        NbrePlace.setText("123...");
-        NbrePlace.addActionListener(new java.awt.event.ActionListener() {
+        NbreTrain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NbrePlaceActionPerformed(evt);
-            }
-        });
-
-        JIdPlace.setText("ID des places");
-
-        IdPlace.setText("(debut)..-..(fin)");
-        IdPlace.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdPlaceActionPerformed(evt);
+                NbreTrainActionPerformed(evt);
             }
         });
 
@@ -149,20 +137,18 @@ public class Admin extends javax.swing.JFrame {
         Admin.setLayout(AdminLayout);
         AdminLayout.setHorizontalGroup(
             AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AdminLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AdminLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Retour)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Reinitialiser)
-                        .addGap(12, 12, 12)
-                        .addComponent(Add)
-                        .addGap(12, 12, 12))
-                    .addGroup(AdminLayout.createSequentialGroup()
+                        .addGap(90, 90, 90)
                         .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AdminLayout.createSequentialGroup()
+                            .addGroup(AdminLayout.createSequentialGroup()
                                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(JGareArrivee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(JGareDepart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -170,41 +156,35 @@ public class Admin extends javax.swing.JFrame {
                                     .addComponent(JHeure, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                                     .addComponent(JTypeChaise, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Prix)
-                                    .addGroup(AdminLayout.createSequentialGroup()
-                                        .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(GareArrivee, 0, 197, Short.MAX_VALUE)
-                                            .addComponent(Heure)
-                                            .addComponent(GareDepart, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(Date))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(TypeChaise, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(TypeChaise, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(GareArrivee, 0, 197, Short.MAX_VALUE)
+                                    .addComponent(Heure)
+                                    .addComponent(GareDepart, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Date)))
                             .addGroup(AdminLayout.createSequentialGroup()
                                 .addComponent(JDuree, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Duree, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(36, 36, 36)))
-                .addGap(129, 129, 129)
-                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JNbrePlace)
-                    .addComponent(JIdPlace))
-                .addGap(18, 18, 18)
-                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(IdPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NbrePlace, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34))
-            .addGroup(AdminLayout.createSequentialGroup()
+                        .addGap(0, 119, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Retour)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Reinitialiser)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AdminLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(121, 121, 121)
-                        .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AdminLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(JPrix, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JNbreTrain)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
+                                .addComponent(JPrix, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)))
+                        .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NbreTrain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Prix, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Add))
+                .addGap(101, 101, 101))
         );
         AdminLayout.setVerticalGroup(
             AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,14 +197,14 @@ public class Admin extends javax.swing.JFrame {
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JGareDepart)
                     .addComponent(GareDepart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JNbrePlace)
-                    .addComponent(NbrePlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JNbreTrain)
+                    .addComponent(NbreTrain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JGareArrivee)
                     .addComponent(GareArrivee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JIdPlace)
-                    .addComponent(IdPlace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Prix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JPrix))
                 .addGap(18, 18, 18)
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JDate)
@@ -241,11 +221,7 @@ public class Admin extends javax.swing.JFrame {
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTypeChaise)
                     .addComponent(TypeChaise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JPrix)
-                    .addComponent(Prix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Retour)
                     .addComponent(Reinitialiser)
@@ -296,21 +272,15 @@ public class Admin extends javax.swing.JFrame {
         Heure.setText("hh:mm");
         Duree.setText("hh:mm");
         Prix.setText("Saisir le prix");
-        NbrePlace.setText("123...");
-        IdPlace.setText("(Debut)..-..(Fin)");
     }//GEN-LAST:event_ReinitialiserActionPerformed
 
     private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RetourActionPerformed
 
-    private void NbrePlaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NbrePlaceActionPerformed
+    private void NbreTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NbreTrainActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NbrePlaceActionPerformed
-
-    private void IdPlaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdPlaceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IdPlaceActionPerformed
+    }//GEN-LAST:event_NbreTrainActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,18 +323,16 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> GareArrivee;
     private javax.swing.JComboBox<String> GareDepart;
     private javax.swing.JTextField Heure;
-    private javax.swing.JTextField IdPlace;
     private javax.swing.JLabel JDate;
     private javax.swing.JLabel JDuree;
     private javax.swing.JLabel JGareArrivee;
     private javax.swing.JLabel JGareDepart;
     private javax.swing.JLabel JHeure;
-    private javax.swing.JLabel JIdPlace;
-    private javax.swing.JLabel JNbrePlace;
+    private javax.swing.JLabel JNbreTrain;
     private javax.swing.JLabel JPrix;
     private javax.swing.JLabel JTypeChaise;
     private javax.swing.JLabel Logo;
-    private javax.swing.JTextField NbrePlace;
+    private javax.swing.JComboBox<String> NbreTrain;
     private javax.swing.JTextField Prix;
     private javax.swing.JButton Reinitialiser;
     private javax.swing.JButton Retour;

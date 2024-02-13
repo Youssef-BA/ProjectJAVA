@@ -51,21 +51,19 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="Logo" min="-2" pref="253" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="Title" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="Retour" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="Reinitialiser" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Component id="Add" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="JGareArrivee" max="32767" attributes="0"/>
                                       <Component id="JGareDepart" max="32767" attributes="0"/>
@@ -74,55 +72,47 @@
                                       <Component id="JTypeChaise" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="Prix" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="GareArrivee" alignment="0" pref="197" max="32767" attributes="0"/>
-                                              <Component id="Heure" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="GareDepart" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="Date" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="TypeChaise" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="TypeChaise" max="32767" attributes="0"/>
+                                      <Component id="GareArrivee" alignment="0" pref="197" max="32767" attributes="0"/>
+                                      <Component id="Heure" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="GareDepart" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Date" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
                                   <Component id="JDuree" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Duree" min="-2" pref="199" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="119" max="32767" attributes="0"/>
                       </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="JNbrePlace" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="JIdPlace" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="IdPlace" min="-2" pref="196" max="-2" attributes="0"/>
-                      <Component id="NbrePlace" min="-2" pref="196" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="Retour" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Reinitialiser" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Logo" min="-2" pref="253" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
-                          <Component id="Title" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                          <Component id="JPrix" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="JNbreTrain" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="JPrix" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="NbreTrain" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
+                              <Component id="Prix" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="Add" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -138,15 +128,15 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JGareDepart" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="GareDepart" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JNbrePlace" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NbrePlace" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JNbreTrain" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NbreTrain" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JGareArrivee" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="GareArrivee" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JIdPlace" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="IdPlace" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Prix" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JPrix" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -168,12 +158,7 @@
                       <Component id="JTypeChaise" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="TypeChaise" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="JPrix" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Prix" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace pref="68" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Retour" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Reinitialiser" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -350,15 +335,13 @@
         <Component class="javax.swing.JLabel" name="Title">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="MS Gothic" size="36" style="0"/>
+              <Font name="MS Reference Sans Serif" size="36" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="ADD TRAIN"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
+            <Property name="text" type="java.lang.String" value="Ajouter un Voyage"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[200, 100]"/>
             </Property>
@@ -367,31 +350,20 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="JNbrePlace">
+        <Component class="javax.swing.JLabel" name="JNbreTrain">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nombre de place"/>
+            <Property name="text" type="java.lang.String" value="Numero de Train"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NbrePlace">
+        <Component class="javax.swing.JComboBox" name="NbreTrain">
           <Properties>
-            <Property name="text" type="java.lang.String" value="123..."/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NbrePlaceActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NbreTrainActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="JIdPlace">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ID des places"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="IdPlace">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="(debut)..-..(fin)"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IdPlaceActionPerformed"/>
-          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
