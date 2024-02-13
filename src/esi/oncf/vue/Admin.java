@@ -289,18 +289,18 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_RetourActionPerformed
 
-    private void NbreTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NbreTrainActionPerformed
+    private void NbreTrainActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-<<<<<<< HEAD
-    }//GEN-LAST:event_NbrePlaceActionPerformed
+
+    }                                         
 
     private void IdPlaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdPlaceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IdPlaceActionPerformed
-=======
-    }//GEN-LAST:event_NbreTrainActionPerformed
 
->>>>>>> 04ed152be0701ee8edb63b667443c83eb9994a6d
+                                           
+
+
     /**
      * @param args the command line arguments
      */

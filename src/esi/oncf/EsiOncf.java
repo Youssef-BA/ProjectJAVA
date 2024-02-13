@@ -6,6 +6,7 @@ package esi.oncf;
 
 import esi.oncf.data.Client;
 import esi.oncf.vue.AUthentification;
+import esi.oncf.vue.TrainInterface;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,8 +23,12 @@ public class EsiOncf {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Hello World!");
-        AUthentification home = new AUthentification();
-        home.setVisible(true);
+        //AUthentification home = new AUthentification();
+        //home.setVisible(true);
+        
+        TrainInterface train_ = new TrainInterface();
+        train_.setVisible(true);
+        
         
         
         
