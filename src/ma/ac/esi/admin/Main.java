@@ -1,4 +1,7 @@
 package ma.ac.esi.admin;  // Assurez-vous que le package correspond à la structure de votre projet
+import esi.oncf.vue.Admin;
+
+
 
 public class Main {
     public static void main(String[] args) {
