@@ -11,7 +11,7 @@ public class RapportVoyage extends JFrame {
         super("Rapport des Voyages");
     
         // Définir la couleur de fond de la fenêtre
-        getContentPane().setBackground(new Color(255, 200, 150)); // Une couleur entre l'orange et le rouge
+        getContentPane().setBackground(new Color(254, 200, 150)); // Une couleur entre l'orange et le rouge
     
         // Création des composants
         table = new JTable();
