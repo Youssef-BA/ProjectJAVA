@@ -5,6 +5,7 @@
 package esi.oncf.vue;
 
 import esi.oncf.control.RechercherVoyage;
+import esi.oncf.control.Reservation;
 
 /**
  *
@@ -15,6 +16,7 @@ public class RechercherTrain extends javax.swing.JFrame {
     /**
      * Creates new form ReservationClient
      */
+    public static String ID_Voyage;
     public RechercherTrain() {
         initComponents();
     }
@@ -42,6 +44,7 @@ public class RechercherTrain extends javax.swing.JFrame {
         chercherButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        Disconnect1 = new javax.swing.JButton();
 
         Date.setText("dd/mm/yyyy");
         Date.addActionListener(new java.awt.event.ActionListener() {
@@ -194,6 +197,15 @@ public class RechercherTrain extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        Disconnect1.setBackground(new java.awt.Color(255, 51, 51));
+        Disconnect1.setForeground(new java.awt.Color(255, 255, 255));
+        Disconnect1.setText("Se Deconnecter");
+        Disconnect1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Disconnect1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -201,23 +213,28 @@ public class RechercherTrain extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Logo3, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Logo3, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Disconnect1)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Logo3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Logo3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Disconnect1)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 140, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -266,15 +283,24 @@ public class RechercherTrain extends javax.swing.JFrame {
         RechercherVoyage.searchVoyage(DateSearch, Gdep, Garr, jTable1);
     }//GEN-LAST:event_chercherButtonActionPerformed
 
+
+    private void Disconnect1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Disconnect1ActionPerformed
+        // TODO add your handling code here:
+        AUthentification FenetreAUthentification = new AUthentification();
+        FenetreAUthentification.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Disconnect1ActionPerformed
+
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int row = jTable1.getSelectedRow();
         int col =4;
         Object value = jTable1.getValueAt(row, col);
         ConfirmerReservationMessage rservationMessage = new ConfirmerReservationMessage();
         rservationMessage.setVisible(true);
-        
         System.out.println(value);
+        RechercherTrain.ID_Voyage = value.toString();
     }//GEN-LAST:event_jTable1MouseClicked
+
 
     /**
      * @param args the command line arguments
@@ -284,6 +310,7 @@ public class RechercherTrain extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Date;
     private javax.swing.JTextField DateField;
+    private javax.swing.JButton Disconnect1;
     private javax.swing.JComboBox<String> GareArrive;
     private javax.swing.JComboBox<String> GareDepart;
     private javax.swing.JLabel Logo3;

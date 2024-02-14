@@ -336,6 +336,9 @@ public class Admin extends javax.swing.JFrame {
 
     private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
         // TODO add your handling code here:
+        AcceuilAdmin FenetreAcceuil = new AcceuilAdmin();
+        FenetreAcceuil.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_RetourActionPerformed
 
     private void NbreTrainActionPerformed(java.awt.event.ActionEvent evt) {                                          

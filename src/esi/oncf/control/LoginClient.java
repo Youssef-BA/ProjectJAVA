@@ -19,18 +19,19 @@ public class LoginClient {
     
     public LoginClient(){}
     
-    public static float loginClientaction(String pswdEntered, String Identred, boolean adminChecked){
+    public static boolean loginClientaction(String pswdEntered, String Identred, boolean adminChecked){
             
         if (adminChecked == true){
             adminChecked=false;
             Admin admin = new Admin();
             
         try {
-            admin.loginAdmin(pswdEntered,Identred);
+            return admin.loginAdmin(pswdEntered,Identred);
+            
         } catch (SQLException ex) {
             Logger.getLogger(EsiOncf.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return 0;
+        return false;
         
     }
         else{            
@@ -38,11 +39,11 @@ public class LoginClient {
            
             
         try {
-            c1.loginClient(pswdEntered,Identred);
+            return c1.loginClient(pswdEntered,Identred);
         } catch (SQLException ex) {
             Logger.getLogger(EsiOncf.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return 0;}
+        return false;}
         
         
     }

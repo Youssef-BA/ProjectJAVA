@@ -4,6 +4,8 @@
  */
 package esi.oncf.vue;
 
+import esi.oncf.control.Reservation;
+
 /**
  *
  * @author yassi
@@ -88,7 +90,8 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
 
     private void ReserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReserverActionPerformed
         String pclasse = (String) SelectedClasse.getSelectedItem();
-        //MakeReservation();
+        System.out.println(pclasse);
+        Reservation.Addreservation(pclasse);
         dispose();
     }//GEN-LAST:event_ReserverActionPerformed
 

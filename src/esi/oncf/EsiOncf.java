@@ -26,8 +26,8 @@ public class EsiOncf {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Hello World!");
-        //AUthentification home = new AUthentification();
-        //home.setVisible(true);
+        AUthentification home = new AUthentification();
+        home.setVisible(true);
         
         //TrainInterface train_ = new TrainInterface();
         //train_.setVisible(true);
@@ -36,11 +36,11 @@ public class EsiOncf {
         //Admin voyage = new  Admin();
         //voyage.setVisible(true);
         
-        RechercherTrain recherche = new RechercherTrain();
-        recherche.setVisible(true);
+        //RechercherTrain recherche = new RechercherTrain();
+        //recherche.setVisible(true);
         
-        Train t1 = new Train("2031");
-        System.out.println(t1.getIdFirstclasse());
+        //Train t1 = new Train("2031");
+        //System.out.println(t1.getIdFirstclasse());
         
     }
     
