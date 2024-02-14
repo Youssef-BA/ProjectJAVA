@@ -166,7 +166,7 @@ public class Admin extends javax.swing.JFrame {
                                 .addComponent(JDuree, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Duree, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 119, Short.MAX_VALUE))
+                        .addGap(0, 113, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Retour)
@@ -176,10 +176,13 @@ public class Admin extends javax.swing.JFrame {
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AdminLayout.createSequentialGroup()
                         .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JNbreTrain)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
+                            .addGroup(AdminLayout.createSequentialGroup()
+                                .addGap(32, 32, 32)
                                 .addComponent(JPrix, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)))
+                                .addGap(28, 28, 28))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminLayout.createSequentialGroup()
+                                .addComponent(JNbreTrain)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NbreTrain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Prix, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -289,18 +292,18 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_RetourActionPerformed
 
-    private void NbreTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NbreTrainActionPerformed
+    private void NbreTrainActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-<<<<<<< HEAD
-    }//GEN-LAST:event_NbrePlaceActionPerformed
+
+    }                                         
 
     private void IdPlaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdPlaceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IdPlaceActionPerformed
-=======
-    }//GEN-LAST:event_NbreTrainActionPerformed
 
->>>>>>> 04ed152be0701ee8edb63b667443c83eb9994a6d
+                                           
+
+
     /**
      * @param args the command line arguments
      */
