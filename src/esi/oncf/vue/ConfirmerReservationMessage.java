@@ -5,6 +5,7 @@
 package esi.oncf.vue;
 
 import esi.oncf.control.Reservation;
+import java.util.Map;
 
 /**
  *
@@ -92,13 +93,19 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
         String pclasse = (String) SelectedClasse.getSelectedItem();
         System.out.println(pclasse);
         Reservation.Addreservation(pclasse);
+        Map<String, Object> reservationDetails = Reservation.addAndRetrieveReservationDetails(pclasse);
+
+        // Now create a new JFrame to display the reservation details
+        ReservationDetails detailsFrame = new ReservationDetails();
+        detailsFrame.displayReservationDetails(reservationDetails);
+        detailsFrame.setVisible(true);
         dispose();
     }//GEN-LAST:event_ReserverActionPerformed
 
     private void SelectedClasseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectedClasseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SelectedClasseActionPerformed
-
+   
     /**
      * @param args the command line arguments
      */
