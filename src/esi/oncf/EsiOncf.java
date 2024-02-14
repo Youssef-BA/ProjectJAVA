@@ -5,7 +5,9 @@
 package esi.oncf;
 
 import esi.oncf.data.Client;
+import esi.oncf.data.Train;
 import esi.oncf.vue.AUthentification;
+import esi.oncf.vue.Admin;
 import esi.oncf.vue.TrainInterface;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -26,11 +28,14 @@ public class EsiOncf {
         //AUthentification home = new AUthentification();
         //home.setVisible(true);
         
-        TrainInterface train_ = new TrainInterface();
-        train_.setVisible(true);
+        //TrainInterface train_ = new TrainInterface();
+        //train_.setVisible(true);
         
+        Admin voyage = new  Admin();
+        voyage.setVisible(true);
         
-        
+        Train t1 = new Train("2031");
+        System.out.println(t1.getIdFirstclasse());
         
     }
     
