@@ -178,15 +178,21 @@ public class RechercherTrain extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Heure Départ", "Type Train", "Prix 1", "Prix 2"
+                "Heure Départ", "Type Train", "Prix 1", "Prix 2", "Voyage ID"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         Disconnect1.setBackground(new java.awt.Color(255, 51, 51));
@@ -275,12 +281,21 @@ public class RechercherTrain extends javax.swing.JFrame {
         RechercherVoyage.searchVoyage(DateSearch, Gdep, Garr, jTable1);
     }//GEN-LAST:event_chercherButtonActionPerformed
 
+<<<<<<< HEAD
     private void Disconnect1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Disconnect1ActionPerformed
         // TODO add your handling code here:
         AUthentification FenetreAUthentification = new AUthentification();
         FenetreAUthentification.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Disconnect1ActionPerformed
+=======
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int row = jTable1.getSelectedRow();
+        int col =4;
+        Object value = jTable1.getValueAt(row, col);
+        System.out.println(value);
+    }//GEN-LAST:event_jTable1MouseClicked
+>>>>>>> e4d1ceda537df49bd89a5609940c07ac848357e2
 
     /**
      * @param args the command line arguments
