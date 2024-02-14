@@ -56,7 +56,7 @@
                   <Component id="Logo" min="-2" pref="253" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="Title" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="237" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -69,11 +69,9 @@
                                       <Component id="JGareDepart" max="32767" attributes="0"/>
                                       <Component id="JDate" alignment="0" max="32767" attributes="0"/>
                                       <Component id="JHeure" alignment="0" pref="90" max="32767" attributes="0"/>
-                                      <Component id="JTypeChaise" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="TypeChaise" max="32767" attributes="0"/>
                                       <Component id="GareArrivee" alignment="0" pref="197" max="32767" attributes="0"/>
                                       <Component id="Heure" alignment="0" max="32767" attributes="0"/>
                                       <Component id="GareDepart" alignment="0" max="32767" attributes="0"/>
@@ -86,7 +84,7 @@
                                   <Component id="Duree" min="-2" pref="199" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="113" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="119" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
@@ -99,19 +97,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                  <Component id="JPrix" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="JNbreTrain" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="JNbreTrain" min="-2" max="-2" attributes="0"/>
+                              <Component id="JPrix" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NbreTrain" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="Prix" alignment="1" min="-2" pref="196" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="NbreTrain" alignment="0" pref="196" max="32767" attributes="0"/>
+                              <Component id="PrixFst" alignment="0" pref="196" max="32767" attributes="0"/>
+                              <Component id="PrixNd" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="Add" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -139,13 +132,15 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JGareArrivee" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="GareArrivee" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Prix" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PrixFst" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JPrix" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JDate" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Date" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="PrixNd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -157,12 +152,7 @@
                       <Component id="JDuree" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Duree" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="JTypeChaise" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TypeChaise" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="68" max="32767" attributes="0"/>
+                  <EmptySpace pref="108" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Retour" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Reinitialiser" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -229,14 +219,9 @@
             <Property name="text" type="java.lang.String" value="Dur&#xe9;e de voyage"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="JTypeChaise">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Type de chaise"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="JPrix">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Prix "/>
+            <Property name="text" type="java.lang.String" value="Prix 1 "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="GareDepart">
@@ -290,30 +275,17 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="TypeChaise">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="1ere Classe"/>
-                <StringItem index="1" value="2eme Classe"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JTextField" name="Duree">
           <Properties>
             <Property name="text" type="java.lang.String" value="hh:mm"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="Prix">
+        <Component class="javax.swing.JTextField" name="PrixFst">
           <Properties>
             <Property name="text" type="java.lang.String" value="Saisir le prix"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrixActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrixFstActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="Heure">
@@ -325,6 +297,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="dd/mm/yyyy"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DateActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Logo">
           <Properties>
@@ -366,6 +341,19 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Prix 2"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="PrixNd">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jTextField1"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrixNdActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

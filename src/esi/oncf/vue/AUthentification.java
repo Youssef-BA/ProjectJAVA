@@ -10,6 +10,7 @@ import esi.oncf.data.Client;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -171,7 +172,22 @@ public class AUthentification extends javax.swing.JFrame {
         System.out.println("esi.oncf.vue.AUthentification.LoginButtonActionPerformed()");
             String Identred = UserIDField.getText();
             String pswdEntered =pswdIDField.getText();
-            LoginClient.loginClientaction(pswdEntered, Identred,adminChecked);
+            
+            // Supposons que cette méthode renvoie 'true' si les identifiants sont corrects, sinon 'false'
+            boolean isAuthenticated = LoginClient.loginClientaction(pswdEntered, Identred, adminChecked);
+
+            if (adminChecked == false && isAuthenticated) {
+                RechercherTrain FenetreClient = new RechercherTrain();
+                FenetreClient.setVisible(true);
+                this.dispose();
+            }else if(adminChecked == true && isAuthenticated){
+                AcceuilAdmin FenetreAcceuil = new AcceuilAdmin();
+                FenetreAcceuil.setVisible(true);
+                this.dispose();
+            }// Si un client essaie de se connecter en tant qu'admin, affichez un message d'erreur
+            else{
+                JOptionPane.showMessageDialog(this, "Login ou mot de passe incorrect", "Erreur de connexion", JOptionPane.ERROR_MESSAGE);
+            }
             
     }//GEN-LAST:event_LoginButtonActionPerformed
 

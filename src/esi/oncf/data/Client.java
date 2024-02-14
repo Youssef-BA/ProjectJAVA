@@ -67,7 +67,7 @@ public class Client {
                 System.out.println(this.password);
                 
                     }
-            ;
+            
             if (pswd.equals(this.password)){
                 System.out.println("Login Succes");
                 return true;
@@ -79,11 +79,33 @@ public class Client {
         
         System.out.println("Login Failed");
                return false;
+    }
+        
+        
+    public void reserver(String idVoyage,String idPlace) {
+        
+        int IDV= Integer.parseInt(idVoyage);
+        int IDP= Integer.parseInt(idPlace);
+        int IDU=Integer.parseInt(this.ID);
+        
+        try {
+    
+            Connection con=DatabaseConnection.getConnection();
+            PreparedStatement pst = con.prepareStatement("INSERT INTO reservation (VoyageReserve,placeReserve,ID_USER) VALUES (?, ? , ?)");
+            pst.setInt(1, IDV);
+            pst.setInt(2, IDP);
+            pst.setInt(3,IDU);
+            int rowsInserted = pst.executeUpdate();
+                
+                    }
+            
+        catch (SQLException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);}
         
         
         
-        
+    }
         
         
   
-}}
+}
