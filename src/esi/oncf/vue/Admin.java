@@ -148,6 +148,11 @@ public class Admin extends javax.swing.JFrame {
         Heure.setText("hh:mm");
 
         Date.setText("dd/mm/yyyy");
+        Date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DateActionPerformed(evt);
+            }
+        });
 
         Logo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ma/ac/esi/image/oncf.png"))); // NOI18N
@@ -345,6 +350,10 @@ public class Admin extends javax.swing.JFrame {
     private void PrixNdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrixNdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PrixNdActionPerformed
+
+    private void DateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DateActionPerformed
 
                                            
 
