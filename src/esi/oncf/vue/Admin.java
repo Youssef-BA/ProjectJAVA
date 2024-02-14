@@ -305,8 +305,8 @@ public class Admin extends javax.swing.JFrame {
         String heureEntered = Heure.getText();
         String DureEntered = Duree.getText();
         String DateEntered = Date.getText();
-        String ERclasseP = PrixNd.getText();
-        String NDclasseP = PrixFst.getText();
+        String ERclasseP = PrixFst.getText();
+        String NDclasseP = PrixNd.getText();
         System.out.println(numTrain + Gdepart+Garrive+DureEntered+heureEntered +DateEntered+ERclasseP+NDclasseP);
         ajouterVoyage(numTrain ,Gdepart ,Garrive,DureEntered,heureEntered ,DateEntered,ERclasseP,NDclasseP);
         //public static void ajouterVoyage(String numTrain,String dep,String arrive,String time,String hour,String Date)

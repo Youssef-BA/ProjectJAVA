@@ -177,15 +177,21 @@ public class RechercherTrain extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Heure Départ", "Type Train", "Prix 1", "Prix 2"
+                "Heure Départ", "Type Train", "Prix 1", "Prix 2", "Voyage ID"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -259,6 +265,13 @@ public class RechercherTrain extends javax.swing.JFrame {
         String Gdep =(String) GareDepart.getSelectedItem();  
         RechercherVoyage.searchVoyage(DateSearch, Gdep, Garr, jTable1);
     }//GEN-LAST:event_chercherButtonActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int row = jTable1.getSelectedRow();
+        int col =4;
+        Object value = jTable1.getValueAt(row, col);
+        System.out.println(value);
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
