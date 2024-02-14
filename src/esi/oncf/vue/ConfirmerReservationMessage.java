@@ -87,7 +87,9 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ReserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReserverActionPerformed
-        // TODO add your handling code here:
+        String pclasse = (String) SelectedClasse.getSelectedItem();
+        //MakeReservation();
+        dispose();
     }//GEN-LAST:event_ReserverActionPerformed
 
     private void SelectedClasseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectedClasseActionPerformed

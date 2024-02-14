@@ -270,6 +270,9 @@ public class RechercherTrain extends javax.swing.JFrame {
         int row = jTable1.getSelectedRow();
         int col =4;
         Object value = jTable1.getValueAt(row, col);
+        ConfirmerReservationMessage rservationMessage = new ConfirmerReservationMessage();
+        rservationMessage.setVisible(true);
+        
         System.out.println(value);
     }//GEN-LAST:event_jTable1MouseClicked
 
