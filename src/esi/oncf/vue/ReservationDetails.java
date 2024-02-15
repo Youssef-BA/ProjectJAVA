@@ -174,29 +174,29 @@ public void setReservationDetails(Map<String, Object> details) {
     }//GEN-LAST:event_ImprimerActionPerformed
     public void displayReservationDetails() {
         Cadre.removeAll();
-    Cadre.setLayout(new GridLayout(0, 2)); // Set a grid layout for two columns
+        Cadre.setLayout(new GridLayout(0, 2)); // Set a grid layout for two columns
 
-    java.awt.Font labelFont = new java.awt.Font("Serif", java.awt.Font.PLAIN, 20); // Choose your desired font size
-    if (this.reservationDetails != null) {
-        System.out.println("Reservation Details Size: " + this.reservationDetails.size());
-        for (Map.Entry<String, Object> entry : this.reservationDetails.entrySet()) {
-            JLabel keyLabel = new JLabel(entry.getKey() + ":");
-            JLabel valueLabel = new JLabel(entry.getValue().toString());
+        java.awt.Font labelFont = new java.awt.Font("Serif", java.awt.Font.PLAIN, 20); // Choose your desired font size
+        if (this.reservationDetails != null) {
+            System.out.println("Reservation Details Size: " + this.reservationDetails.size());
+            for (Map.Entry<String, Object> entry : this.reservationDetails.entrySet()) {
+                JLabel keyLabel = new JLabel(entry.getKey() + ":");
+                JLabel valueLabel = new JLabel(entry.getValue().toString());
 
-            keyLabel.setFont(labelFont);
-            valueLabel.setFont(labelFont);
+                keyLabel.setFont(labelFont);
+                valueLabel.setFont(labelFont);
 
-            Cadre.add(keyLabel);
-            Cadre.add(valueLabel);
+                Cadre.add(keyLabel);
+                Cadre.add(valueLabel);
+            }
+        } else {
+            JLabel noDetailsLabel = new JLabel("No reservation details available.");
+            noDetailsLabel.setFont(labelFont);
+            Cadre.add(noDetailsLabel);
         }
-    } else {
-        JLabel noDetailsLabel = new JLabel("No reservation details available.");
-        noDetailsLabel.setFont(labelFont);
-        Cadre.add(noDetailsLabel);
-    }
 
-    Cadre.revalidate();
-    Cadre.repaint(); // Redessine le panel et ses composants.
+        Cadre.revalidate();
+        Cadre.repaint(); // Redessine le panel et ses composants.
     }
     /**
      * @param args the command line arguments

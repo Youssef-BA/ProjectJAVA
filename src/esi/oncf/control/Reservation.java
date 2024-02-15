@@ -86,9 +86,11 @@ public class Reservation {
                        RED=rs1.getInt("ReductionAmount");
                        if (!REDc.equals(CodeReser) && !CodeReser.isEmpty()){ 
                                JOptionPane.showMessageDialog(null, "Code de Reduction Erroné");
-                               return false;
                                
-                       }
+                               return false;}
+                        if (CodeReser.isEmpty())      
+                        {RED=0;}
+                       
                     }
             
             
@@ -123,7 +125,7 @@ public class Reservation {
         return false;
     
 }
-    public static Map<String, Object> addAndRetrieveReservationDetails(String typeClasse ) {
+    public static Map<String, Object> addAndRetrieveReservationDetails(String typeClasse, String redCode1) {
         String pID=getPlace(typeClasse);
        if( Reservation.Addreservation(typeClasse,redCode)){
 

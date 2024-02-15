@@ -108,11 +108,12 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ReserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReserverActionPerformed
-        String pclasse = (String) SelectedClasse.getSelectedItem();
+       String pclasse = (String) SelectedClasse.getSelectedItem();
+        redCode = ReductionC.getText(); // Assurez-vous de récupérer le texte du champ de texte ReductionC
         System.out.println(pclasse);
-        Map<String, Object> reservationDetails = Reservation.addAndRetrieveReservationDetails(pclasse);
+        // Assurez-vous de passer redCode à la méthode qui en a besoin
+        Map<String, Object> reservationDetails = Reservation.addAndRetrieveReservationDetails(pclasse, redCode); // Supposons que cette méthode accepte redCode comme argument
 
-        // Now create a new JFrame to display the reservation details
         detailsFrame.setReservationDetails(reservationDetails);
         detailsFrame.displayReservationDetails(); // Appelé sans paramètres
         detailsFrame.setVisible(true);
