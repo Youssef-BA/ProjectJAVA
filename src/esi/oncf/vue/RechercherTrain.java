@@ -94,7 +94,7 @@ public class RechercherTrain extends javax.swing.JFrame {
             }
         });
 
-        DateField.setText("hh:mm");
+        DateField.setText("yyyy-mm-dd");
         DateField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DateFieldActionPerformed(evt);

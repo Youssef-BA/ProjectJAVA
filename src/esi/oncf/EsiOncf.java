@@ -27,12 +27,12 @@ public class EsiOncf {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Hello World!");
-        //AUthentification home = new AUthentification();
-        //home.setVisible(true);
+        AUthentification home = new AUthentification();
+        home.setVisible(true);
         
         
-        RapportVoyage test = new RapportVoyage();
-        test.setVisible(true);
+        //RapportVoyage test = new RapportVoyage();
+        //test.setVisible(true);
         //TrainInterface train_ = new TrainInterface();
         //train_.setVisible(true);
         
