@@ -87,6 +87,10 @@ public class Admin extends javax.swing.JFrame {
         NbreTrain = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         PrixNd = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        ReductionC = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        Reduction = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -181,6 +185,19 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Code reduction");
+
+        ReductionC.setText("jTextField1");
+
+        jLabel3.setText("Valeur reduite");
+
+        Reduction.setText("jTextField1");
+        Reduction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReductionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AdminLayout = new javax.swing.GroupLayout(Admin);
         Admin.setLayout(AdminLayout);
         AdminLayout.setHorizontalGroup(
@@ -219,17 +236,23 @@ public class Admin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Reinitialiser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Add)
                     .addGroup(AdminLayout.createSequentialGroup()
                         .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JNbreTrain)
                             .addComponent(JPrix, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
                         .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(NbreTrain, 0, 196, Short.MAX_VALUE)
                             .addComponent(PrixFst, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                            .addComponent(PrixNd)))
-                    .addComponent(Add))
+                            .addComponent(PrixNd)
+                            .addComponent(ReductionC)))
+                    .addGroup(AdminLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(Reduction)))
                 .addGap(101, 101, 101))
         );
         AdminLayout.setVerticalGroup(
@@ -260,11 +283,15 @@ public class Admin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JHeure)
-                    .addComponent(Heure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Heure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(ReductionC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JDuree)
-                    .addComponent(Duree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Duree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(Reduction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Retour)
@@ -302,13 +329,15 @@ public class Admin extends javax.swing.JFrame {
         String Gdepart = (String) GareDepart.getSelectedItem();
         String Garrive=(String) GareArrivee.getSelectedItem();
         String numTrain=(String) NbreTrain.getSelectedItem();
+        String RED = Reduction.getText();
+        String REDC = ReductionC.getText();
         String heureEntered = Heure.getText();
         String DureEntered = Duree.getText();
         String DateEntered = Date.getText();
         String ERclasseP = PrixFst.getText();
         String NDclasseP = PrixNd.getText();
         System.out.println(numTrain + Gdepart+Garrive+DureEntered+heureEntered +DateEntered+ERclasseP+NDclasseP);
-        ajouterVoyage(numTrain ,Gdepart ,Garrive,DureEntered,heureEntered ,DateEntered,ERclasseP,NDclasseP);
+        ajouterVoyage(numTrain ,Gdepart ,Garrive,DureEntered,heureEntered ,DateEntered,ERclasseP,NDclasseP,REDC,RED);
         //public static void ajouterVoyage(String numTrain,String dep,String arrive,String time,String hour,String Date)
         
         
@@ -358,6 +387,10 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DateActionPerformed
 
+    private void ReductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReductionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReductionActionPerformed
+
                                            
 
 
@@ -384,10 +417,14 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> NbreTrain;
     private javax.swing.JTextField PrixFst;
     private javax.swing.JTextField PrixNd;
+    private javax.swing.JTextField Reduction;
+    private javax.swing.JTextField ReductionC;
     private javax.swing.JButton Reinitialiser;
     private javax.swing.JButton Retour;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
     Object getGareDepart() {

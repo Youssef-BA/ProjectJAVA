@@ -7,6 +7,7 @@ package esi.oncf.control;
 import esi.oncf.data.Client;
 import esi.oncf.data.DatabaseConnection;
 import esi.oncf.vue.AUthentification;
+import static esi.oncf.vue.ConfirmerReservationMessage.redCode;
 import esi.oncf.vue.RechercherTrain;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,6 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -67,11 +69,29 @@ public class Reservation {
     
         }
     
-    public static void Addreservation(String typeClasse){
-        
+    public static boolean Addreservation(String typeClasse,String CodeReser){
+        int RED=0;
+        int prix=0;
         try {
             
             Connection con=DatabaseConnection.getConnection();
+            
+            
+            PreparedStatement pst3 = con.prepareStatement("SELECT * FROM voyage WHERE IDvoyage=? ");
+            pst3.setString(1, RechercherTrain.ID_Voyage);
+            
+            ResultSet rs1 = pst3.executeQuery();
+                    while (rs1.next()) {
+                       String REDc = rs1.getString("Reduction");
+                       RED=rs1.getInt("ReductionAmount");
+                       if (!REDc.equals(CodeReser) && !CodeReser.isEmpty()){ 
+                               JOptionPane.showMessageDialog(null, "Code de Reduction Erroné");
+                               return false;
+                               
+                       }
+                    }
+            
+            
             PreparedStatement pst = con.prepareStatement("INSERT INTO reservation (ID_USER,VoyageReserve,placeReserve) VALUES (?, ? ,?)");
             pst.setString(1, AUthentification.id);
             pst.setString(2, RechercherTrain.ID_Voyage);
@@ -81,31 +101,44 @@ public class Reservation {
             
             pst.executeUpdate();
             
-            PreparedStatement pst1 = con.prepareStatement("UPDATE place SET Etat = 1 WHERE IDPlace = ? ");
-            pst1.setString(1, getPlace(typeClasse));
+            PreparedStatement pst4 = con.prepareStatement("SELECT * FROM place WHERE IDPlace=? ");
+            pst4.setString(1,getPlace(typeClasse));
+            ResultSet rs4 = pst4.executeQuery();
+            while (rs4.next()){
+            prix =rs4.getInt("prix") ;}
+            
+            PreparedStatement pst1 = con.prepareStatement("UPDATE place SET Etat = 1 , prix = ? WHERE IDPlace = ? ");
+            pst1.setInt(1, prix - RED);
+            pst1.setString(2, getPlace(typeClasse));
             pst1.executeUpdate();
+            return true;
+            
+            
+            
+            
         
         }
         catch (SQLException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);}
+        return false;
     
 }
-    public static Map<String, Object> addAndRetrieveReservationDetails(String typeClasse) {
-        // Add the reservation as before
-        Addreservation(typeClasse);
+    public static Map<String, Object> addAndRetrieveReservationDetails(String typeClasse ) {
+        String pID=getPlace(typeClasse);
+       if( Reservation.Addreservation(typeClasse,redCode)){
 
         // Then, fetch the reservation details
         Map<String, Object> details = new HashMap<>();
         String query = "SELECT v.IDvoyage, v.NumTrain, p.numeroPlace, p.Prix, v.GareDepart, v.GareArrivee, v.Date, v.Duree, v.HeureDepart, p.Classe "
                      + "FROM Voyage v "
                      + "JOIN Place p ON v.NumTrain = p.TrainApp "
-                     + "WHERE v.IDvoyage = ? AND p.Classe = ? AND p.Etat IS NULL "
+                     + "WHERE v.IDvoyage = ?  AND p.IDPlace =? "
                      + "LIMIT 1";
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement pst = con.prepareStatement(query)) {
             
             pst.setString(1, RechercherTrain.ID_Voyage);
-            pst.setString(2, typeClasse);
+            pst.setString(2, pID);
             ResultSet rs = pst.executeQuery();
             if (rs.next()) {
                 details.put("IDvoyage", rs.getString("IDvoyage"));
@@ -122,6 +155,7 @@ public class Reservation {
         } catch (SQLException ex) {
             Logger.getLogger(Reservation.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return details;
+        return details;}
+       return null;
     }
 }

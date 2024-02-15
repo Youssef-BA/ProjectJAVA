@@ -42,7 +42,7 @@ public class AddVoyage {
         }
     
     
-        public static void ajouterVoyage(String numTrain,String dep,String arrive,String time,String hour,String Date ,String FsPrice,String SdPrice ){
+        public static void ajouterVoyage(String numTrain,String dep,String arrive,String time,String hour,String Date ,String FsPrice,String SdPrice ,String RDC,String RD){
         
         int erClasse=Integer.parseInt(FsPrice);
         int NdClasse=Integer.parseInt(SdPrice);
@@ -51,13 +51,15 @@ public class AddVoyage {
         try {
             
             Connection con=DatabaseConnection.getConnection();
-            PreparedStatement pst = con.prepareStatement("INSERT INTO voyage (NumTrain,GareDepart,Date,Duree,HeureDepart,GareArrivee) VALUES (?, ?,?,?,?,?)");
+            PreparedStatement pst = con.prepareStatement("INSERT INTO voyage (NumTrain,GareDepart,Date,Duree,HeureDepart,GareArrivee,ReductionAmount,Reduction) VALUES (?, ?,?,?,?,?,?,?)");
             pst.setInt(1, numberTrain);
             pst.setString(2, dep);
             pst.setString(3, Date);
             pst.setString(4, time);
             pst.setString(5, hour);
             pst.setString(6, arrive);
+            pst.setString(7, RD);
+            pst.setString(8, RDC);
             int rowsInserted = pst.executeUpdate();
             System.out.println("Voyage Aded");
             

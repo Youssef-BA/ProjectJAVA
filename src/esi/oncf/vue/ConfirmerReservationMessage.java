@@ -12,7 +12,7 @@ import java.util.Map;
  * @author yassi
  */
 public class ConfirmerReservationMessage extends javax.swing.JFrame {
-
+    public static String redCode;
     /**
      * Creates new form ConfirmerReservationMessage
      */
@@ -33,6 +33,8 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
         SelectedClasse = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         Reserver = new javax.swing.JToggleButton();
+        jLabel3 = new javax.swing.JLabel();
+        ReductionC = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +57,15 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Code Reduction");
+
+        ReductionC.setText("jTextField1");
+        ReductionC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReductionCActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,7 +81,12 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Reserver)
-                            .addComponent(SelectedClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(SelectedClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ReductionC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -81,7 +97,11 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(SelectedClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(ReductionC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(Reserver)
                 .addContainerGap())
         );
@@ -91,8 +111,9 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
 
     private void ReserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReserverActionPerformed
         String pclasse = (String) SelectedClasse.getSelectedItem();
-        System.out.println(pclasse);
-        Reservation.Addreservation(pclasse);
+        redCode = ReductionC.getText();
+        
+        
         Map<String, Object> reservationDetails = Reservation.addAndRetrieveReservationDetails(pclasse);
 
         // Now create a new JFrame to display the reservation details
@@ -105,6 +126,10 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
     private void SelectedClasseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectedClasseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SelectedClasseActionPerformed
+
+    private void ReductionCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReductionCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ReductionCActionPerformed
    
     /**
      * @param args the command line arguments
@@ -142,9 +167,11 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ReductionC;
     private javax.swing.JToggleButton Reserver;
     private javax.swing.JComboBox<String> SelectedClasse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
