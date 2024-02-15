@@ -86,9 +86,11 @@ public class Reservation {
                        RED=rs1.getInt("ReductionAmount");
                        if (!REDc.equals(CodeReser) && !CodeReser.isEmpty()){ 
                                JOptionPane.showMessageDialog(null, "Code de Reduction Erroné");
-                               return false;
                                
-                       }
+                               return false;}
+                        if (CodeReser.isEmpty())      
+                        {RED=0;}
+                       
                     }
             
             
