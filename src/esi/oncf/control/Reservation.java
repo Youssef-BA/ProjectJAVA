@@ -55,7 +55,8 @@ public class Reservation {
             ResultSet rs=pst.executeQuery();
             while(rs.next()){
                 System.out.println(rs.getString("IDPlace"));
-                return rs.getString("IDPlace");
+                String IDp =rs.getString("IDPlace");
+                return IDp;
                 
                 
                     }
@@ -76,7 +77,13 @@ public class Reservation {
             pst.setString(2, RechercherTrain.ID_Voyage);
             pst.setString(3, getPlace(typeClasse));
             
+            
+            
             pst.executeUpdate();
+            
+            PreparedStatement pst1 = con.prepareStatement("UPDATE place SET Etat = 1 WHERE IDPlace = ? ");
+            pst1.setString(1, getPlace(typeClasse));
+            pst1.executeUpdate();
         
         }
         catch (SQLException ex) {
