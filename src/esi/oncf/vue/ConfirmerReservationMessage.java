@@ -13,9 +13,7 @@ import java.util.Map;
  */
 public class ConfirmerReservationMessage extends javax.swing.JFrame {
     public static String redCode;
-    /**
-     * Creates new form ConfirmerReservationMessage
-     */
+    public static ReservationDetails detailsFrame = new ReservationDetails();
     public ConfirmerReservationMessage() {
         initComponents();
     }
@@ -111,14 +109,12 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
 
     private void ReserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReserverActionPerformed
         String pclasse = (String) SelectedClasse.getSelectedItem();
-        redCode = ReductionC.getText();
-        
-        
+        System.out.println(pclasse);
         Map<String, Object> reservationDetails = Reservation.addAndRetrieveReservationDetails(pclasse);
 
         // Now create a new JFrame to display the reservation details
-        ReservationDetails detailsFrame = new ReservationDetails();
-        detailsFrame.displayReservationDetails(reservationDetails);
+        detailsFrame.setReservationDetails(reservationDetails);
+        detailsFrame.displayReservationDetails(); // Appelé sans paramètres
         detailsFrame.setVisible(true);
         dispose();
     }//GEN-LAST:event_ReserverActionPerformed

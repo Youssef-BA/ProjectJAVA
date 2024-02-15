@@ -38,12 +38,9 @@ public class LoginClient {
             Client c1 = new Client();
            
             
-        try {
+
             return c1.loginClient(pswdEntered,Identred);
-        } catch (SQLException ex) {
-            Logger.getLogger(EsiOncf.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return false;}
+}
         
         
     }

@@ -3,27 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package esi.oncf.vue;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Font.FontFamily;
+
 import java.awt.GridLayout;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import esi.oncf.data.DatabaseConnection;
-import java.awt.Font;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 /**
  *
  * @author Administrator
  */
 public class ReservationDetails extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ReservationDetails
-     */
+    public Map<String, Object> reservationDetails;
     public ReservationDetails() {
         initComponents();
     }
@@ -147,18 +145,41 @@ public class ReservationDetails extends javax.swing.JFrame {
         FenetreAcceuil.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_QuitterActionPerformed
-
+public void setReservationDetails(Map<String, Object> details) {
+        this.reservationDetails = details;
+    }
     private void ImprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimerActionPerformed
-        // TODO add your handling code here:
-        
+        Document document = new Document();
+    try {
+        PdfWriter.getInstance(document, new FileOutputStream("DetailsDeReservation.pdf"));
+        document.open();
+        Font font = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
+        System.out.println("Reservation Details Size: " + this.reservationDetails.size());
+        this.reservationDetails.forEach((key, value) -> System.out.println(key + ": " + value));
+
+        if (this.reservationDetails != null && !this.reservationDetails.isEmpty()) {
+            for (Map.Entry<String, Object> entry : this.reservationDetails.entrySet()) {
+                String text = entry.getKey() + ": " + entry.getValue().toString();
+                Paragraph paragraph = new Paragraph(text, font);
+                document.add(paragraph);
+            }
+        } else {
+            document.add(new Paragraph("No reservation details available.", font));
+        }
+    } catch (DocumentException | FileNotFoundException e) {
+        e.printStackTrace();
+    } finally {
+        document.close();
+    }
     }//GEN-LAST:event_ImprimerActionPerformed
-    public void displayReservationDetails(Map<String, Object> reservationDetails) {
+    public void displayReservationDetails() {
         Cadre.removeAll();
-        Cadre.setLayout(new GridLayout(0, 2)); // Set a grid layout for two columns
+    Cadre.setLayout(new GridLayout(0, 2)); // Set a grid layout for two columns
 
-        Font labelFont = new Font("Serif", Font.PLAIN, 20); // Choose your desired font size
-
-        for (Map.Entry<String, Object> entry : reservationDetails.entrySet()) {
+    java.awt.Font labelFont = new java.awt.Font("Serif", java.awt.Font.PLAIN, 20); // Choose your desired font size
+    if (this.reservationDetails != null) {
+        System.out.println("Reservation Details Size: " + this.reservationDetails.size());
+        for (Map.Entry<String, Object> entry : this.reservationDetails.entrySet()) {
             JLabel keyLabel = new JLabel(entry.getKey() + ":");
             JLabel valueLabel = new JLabel(entry.getValue().toString());
 
@@ -168,9 +189,14 @@ public class ReservationDetails extends javax.swing.JFrame {
             Cadre.add(keyLabel);
             Cadre.add(valueLabel);
         }
+    } else {
+        JLabel noDetailsLabel = new JLabel("No reservation details available.");
+        noDetailsLabel.setFont(labelFont);
+        Cadre.add(noDetailsLabel);
+    }
 
-        Cadre.revalidate();
-        Cadre.repaint();
+    Cadre.revalidate();
+    Cadre.repaint(); // Redessine le panel et ses composants.
     }
     /**
      * @param args the command line arguments
