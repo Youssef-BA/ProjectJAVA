@@ -15,6 +15,17 @@ import java.util.Map;
 import javax.swing.JLabel;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfReader;
+import com.itextpdf.text.pdf.PdfStamper;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.GrayColor;
+import com.itextpdf.text.pdf.PdfContentByte;
+import esi.oncf.control.PdfFiller;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 /**
  *
  * @author Administrator
@@ -149,28 +160,15 @@ public void setReservationDetails(Map<String, Object> details) {
         this.reservationDetails = details;
     }
     private void ImprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimerActionPerformed
-        Document document = new Document();
-    try {
-        PdfWriter.getInstance(document, new FileOutputStream("DetailsDeReservation.pdf"));
-        document.open();
-        Font font = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL);
-        System.out.println("Reservation Details Size: " + this.reservationDetails.size());
-        this.reservationDetails.forEach((key, value) -> System.out.println(key + ": " + value));
+        String src = "input/tickets.pdf";
+        String dest = "output/DetailsDeReservation.pdf";
 
-        if (this.reservationDetails != null && !this.reservationDetails.isEmpty()) {
-            for (Map.Entry<String, Object> entry : this.reservationDetails.entrySet()) {
-                String text = entry.getKey() + ": " + entry.getValue().toString();
-                Paragraph paragraph = new Paragraph(text, font);
-                document.add(paragraph);
-            }
-        } else {
-            document.add(new Paragraph("No reservation details available.", font));
+        PdfFiller pdfFiller = new PdfFiller(reservationDetails);
+        try {
+            pdfFiller.fillPdf(src, dest);
+        } catch (IOException | DocumentException e) {
+            e.printStackTrace();
         }
-    } catch (DocumentException | FileNotFoundException e) {
-        e.printStackTrace();
-    } finally {
-        document.close();
-    }
     }//GEN-LAST:event_ImprimerActionPerformed
     public void displayReservationDetails() {
         Cadre.removeAll();
