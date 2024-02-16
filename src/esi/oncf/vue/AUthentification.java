@@ -11,6 +11,10 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 /**
  *
@@ -75,6 +79,12 @@ public class AUthentification extends javax.swing.JFrame {
             }
         });
 
+        pswdIDField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pswdIDFieldActionPerformed(evt);
+            }
+        });
+
         LoginButton.setText("LOGIN");
         LoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +111,7 @@ public class AUthentification extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LoginButton))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 125, Short.MAX_VALUE)
+                .addGap(0, 126, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(125, 125, 125))
         );
@@ -170,30 +180,47 @@ public class AUthentification extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminCheckboxActionPerformed
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-        System.out.println("esi.oncf.vue.AUthentification.LoginButtonActionPerformed()");
-            
-            String Identred = UserIDField.getText();
-            AUthentification.id=Identred;
-            String pswdEntered =pswdIDField.getText();
-            
-            // Supposons que cette méthode renvoie 'true' si les identifiants sont corrects, sinon 'false'
-            boolean isAuthenticated = LoginClient.loginClientaction(pswdEntered, Identred, adminChecked);
-
-            if (adminChecked == false && isAuthenticated) {
-                RechercherTrain FenetreClient = new RechercherTrain();
-                FenetreClient.setVisible(true);
-                this.dispose();
-            }else if(adminChecked == true && isAuthenticated){
-                AcceuilAdmin FenetreAcceuil = new AcceuilAdmin();
-                FenetreAcceuil.setVisible(true);
-                this.dispose();
-            }// Si un client essaie de se connecter en tant qu'admin, affichez un message d'erreur
-            else{
-                JOptionPane.showMessageDialog(this, "Login ou mot de passe incorrect", "Erreur de connexion", JOptionPane.ERROR_MESSAGE);
-            }
+        loginProcess();
             
     }//GEN-LAST:event_LoginButtonActionPerformed
 
+    private void pswdIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswdIDFieldActionPerformed
+                // Add a FocusListener to the password field to add KeyListener when the focus is gained
+                pswdIDField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    loginProcess();
+                }
+            }
+        });
+
+        // Request focus for the password field (if not already focused)
+        pswdIDField.requestFocus();
+
+      
+    }//GEN-LAST:event_pswdIDFieldActionPerformed
+
+    private void loginProcess() {
+        String Identred = UserIDField.getText();
+        AUthentification.id = Identred;
+        String pswdEntered = pswdIDField.getText();
+
+        // Supposons que cette méthode renvoie 'true' si les identifiants sont corrects, sinon 'false'
+        boolean isAuthenticated = LoginClient.loginClientaction(pswdEntered, Identred, adminChecked);
+
+        if (adminChecked == false && isAuthenticated) {
+            RechercherTrain FenetreClient = new RechercherTrain();
+            FenetreClient.setVisible(true);
+            this.dispose();
+        } else if (adminChecked == true && isAuthenticated) {
+            AccueilAdmin FenetreAcceuil = new AccueilAdmin();
+            FenetreAcceuil.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Login ou mot de passe incorrect", "Erreur de connexion", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -222,6 +249,7 @@ public class AUthentification extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AUthentification().setVisible(true);

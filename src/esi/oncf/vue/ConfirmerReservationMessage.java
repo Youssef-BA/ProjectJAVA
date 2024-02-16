@@ -57,7 +57,6 @@ public class ConfirmerReservationMessage extends javax.swing.JFrame {
 
         jLabel3.setText("Code Reduction");
 
-        ReductionC.setText("jTextField1");
         ReductionC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ReductionCActionPerformed(evt);
