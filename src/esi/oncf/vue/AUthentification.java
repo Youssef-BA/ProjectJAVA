@@ -214,7 +214,7 @@ public class AUthentification extends javax.swing.JFrame {
             FenetreClient.setVisible(true);
             this.dispose();
         } else if (adminChecked == true && isAuthenticated) {
-            AcceuilAdmin FenetreAcceuil = new AcceuilAdmin();
+            AccueilAdmin FenetreAcceuil = new AccueilAdmin();
             FenetreAcceuil.setVisible(true);
             this.dispose();
         } else {

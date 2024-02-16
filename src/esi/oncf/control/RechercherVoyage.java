@@ -24,10 +24,7 @@ import javax.swing.table.DefaultTableModel;
  * @author yassi
  */
 public class RechercherVoyage {
-<<<<<<< HEAD
-        
-=======
->>>>>>> 318fa86a08962b854720102f688980f2f60ce613
+
     public static void AfficherVoyage(JTable table){
         String Ntrain = null;
         String IDV = null;
@@ -85,10 +82,7 @@ public class RechercherVoyage {
                     // Handle SQLException as needed
                 }
     }
-<<<<<<< HEAD
-            
-=======
->>>>>>> 318fa86a08962b854720102f688980f2f60ce613
+
 
     public static void searchVoyage(String date, String Gdep, String Garrive, JTable table) {
         String prixF = null;
