@@ -30,9 +30,9 @@ public class AccueilAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         AddTrain = new javax.swing.JButton();
         AddVoyage = new javax.swing.JButton();
-        AddCoupon = new javax.swing.JButton();
         Disconnect = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        Rapport = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,8 +55,6 @@ public class AccueilAdmin extends javax.swing.JFrame {
             }
         });
 
-        AddCoupon.setText("Ajouter un Coupon");
-
         Disconnect.setBackground(new java.awt.Color(255, 51, 51));
         Disconnect.setForeground(new java.awt.Color(255, 255, 255));
         Disconnect.setText("Se deconnecter");
@@ -70,19 +68,17 @@ public class AccueilAdmin extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("ACCUEIL");
 
+        Rapport.setText("Rapport de Voyage");
+        Rapport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RapportActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(236, 236, 236)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AddCoupon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AddVoyage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AddTrain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                .addComponent(Disconnect)
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -91,6 +87,16 @@ public class AccueilAdmin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(224, 224, 224))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(236, 236, 236)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Rapport, javax.swing.GroupLayout.PREFERRED_SIZE, 130, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(AddVoyage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AddTrain, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addComponent(Disconnect)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,7 +112,7 @@ public class AccueilAdmin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(AddVoyage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(AddCoupon, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Rapport, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
         );
 
@@ -131,25 +137,32 @@ public class AccueilAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTrainActionPerformed
-        // TODO add your handling code here:
+
         TrainInterface FenetreTrain = new TrainInterface();
         FenetreTrain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AddTrainActionPerformed
 
     private void AddVoyageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddVoyageActionPerformed
-        // TODO add your handling code here:
+
         Admin FenetreVoyage = new Admin();
         FenetreVoyage.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AddVoyageActionPerformed
 
     private void DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisconnectActionPerformed
-        // TODO add your handling code here:
+
         AUthentification FenetreAuthentification = new AUthentification();
         FenetreAuthentification.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_DisconnectActionPerformed
+
+    private void RapportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RapportActionPerformed
+
+        Rapport FenetreRapport = new Rapport();
+        FenetreRapport.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_RapportActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,10 +200,10 @@ public class AccueilAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddCoupon;
     private javax.swing.JButton AddTrain;
     private javax.swing.JButton AddVoyage;
     private javax.swing.JButton Disconnect;
+    private javax.swing.JButton Rapport;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

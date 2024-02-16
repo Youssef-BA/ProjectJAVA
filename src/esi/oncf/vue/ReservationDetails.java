@@ -64,6 +64,8 @@ public class ReservationDetails extends javax.swing.JFrame {
         Title.setFocusCycleRoot(true);
         Title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        Cadre.setBackground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout CadreLayout = new javax.swing.GroupLayout(Cadre);
         Cadre.setLayout(CadreLayout);
         CadreLayout.setHorizontalGroup(

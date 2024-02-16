@@ -94,6 +94,7 @@ public class TrainInterface extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(255, 0, 0));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Supprimer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +115,7 @@ public class TrainInterface extends javax.swing.JFrame {
 
         jLabel3.setText("Type de train");
 
-        TypeTrainField.setText("jTextField1");
+        TypeTrainField.setText("ex:TGV");
         TypeTrainField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TypeTrainFieldActionPerformed(evt);
