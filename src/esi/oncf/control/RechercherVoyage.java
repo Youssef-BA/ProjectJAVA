@@ -23,6 +23,63 @@ import javax.swing.table.DefaultTableModel;
  * @author yassi
  */
 public class RechercherVoyage {
+    public static void AfficherVoyage(JTable table){
+        String Ntrain = null;
+        String IDV = null;
+        int FSClasse = 0;
+        int NdClasse = 0;
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model.setRowCount(0);
+        HashMap<String, String> rowData = new HashMap<>();
+        try {
+            Connection con = DatabaseConnection.getConnection();
+            PreparedStatement pst = con.prepareStatement("SELECT * FROM VOYAGE");
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                IDV = rs.getString("IDvoyage");
+                Ntrain=rs.getString("NumTrain");// Set the flag to true as at least one row is processed
+
+                try {
+                    
+                    PreparedStatement pst1 = con.prepareStatement("SELECT COUNT(place.classe) as FSClasse FROM reservation JOIN place ON reservation.placeReserve = place.idplace WHERE reservation.VoyageReserve = ? AND place.classe=1");
+                    pst1.setString(1, IDV);
+                    ResultSet rs1 = pst1.executeQuery();
+                    while (rs1.next()) {
+                     FSClasse = rs1.getInt("FSClasse");
+                    }
+            
+            }
+                catch (SQLException ex) {
+                    Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+                    // Handle SQLException as needed
+                }
+                try {
+                    
+                    PreparedStatement pst2 = con.prepareStatement("SELECT COUNT(place.classe) as FSClasse FROM reservation JOIN place ON reservation.placeReserve = place.idplace WHERE reservation.VoyageReserve = ? AND place.classe=2");
+                    pst2.setString(1, IDV);
+                    ResultSet rs1 = pst2.executeQuery();
+                    while (rs1.next()) {
+                     NdClasse = rs1.getInt("FSClasse");
+                     
+                        model.addRow(new Object[]{IDV, Ntrain, FSClasse, NdClasse});
+                    }
+            
+            }
+                catch (SQLException ex) {
+                    Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+                    // Handle SQLException as needed
+                }
+                
+                
+            }
+                        
+        
+        }
+        catch (SQLException ex) {
+                    Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+                    // Handle SQLException as needed
+                }
+    }
 
     public static void searchVoyage(String date, String Gdep, String Garrive, JTable table) {
         String prixF = null;
