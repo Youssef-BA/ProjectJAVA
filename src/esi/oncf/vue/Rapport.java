@@ -4,12 +4,18 @@
  */
 package esi.oncf.vue;
 
+<<<<<<< HEAD
 
 import javax.swing.JTable;
 
 /**
  *
  * @author yassi
+=======
+/**
+ *
+ * @author Administrateur
+>>>>>>> 318fa86a08962b854720102f688980f2f60ce613
  */
 public class Rapport extends javax.swing.JFrame {
 
@@ -18,7 +24,11 @@ public class Rapport extends javax.swing.JFrame {
      */
     public Rapport() {
         initComponents();
+<<<<<<< HEAD
         //AfficherVoyage(jTable1);
+=======
+        //AfficherVoyage(jTable1)
+>>>>>>> 318fa86a08962b854720102f688980f2f60ce613
     }
 
     /**
@@ -35,8 +45,11 @@ public class Rapport extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+<<<<<<< HEAD
         setBackground(new java.awt.Color(255, 125, 16));
         setPreferredSize(new java.awt.Dimension(910, 550));
+=======
+>>>>>>> 318fa86a08962b854720102f688980f2f60ce613
 
         jPanel1.setBackground(new java.awt.Color(255, 125, 16));
         jPanel1.setPreferredSize(new java.awt.Dimension(910, 550));
@@ -49,7 +62,11 @@ public class Rapport extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
+<<<<<<< HEAD
                 "ID Voyage", "Num Train", "Place 1 RES", "Place 2 RES"
+=======
+                "ID Voyage", "Num Train", "Classe 1 RES", "Classe 2 RES"
+>>>>>>> 318fa86a08962b854720102f688980f2f60ce613
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -58,17 +75,30 @@ public class Rapport extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(342, Short.MAX_VALUE))
+=======
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(230, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+>>>>>>> 318fa86a08962b854720102f688980f2f60ce613
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap(117, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+=======
+                .addContainerGap(88, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+>>>>>>> 318fa86a08962b854720102f688980f2f60ce613
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -76,9 +106,14 @@ public class Rapport extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 812, Short.MAX_VALUE))
+>>>>>>> 318fa86a08962b854720102f688980f2f60ce613
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
